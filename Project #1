@@ -1,0 +1,9 @@
+age = int(input("How old are you? "))
+
+if age < 18:
+    if 13 <= age <= 17:
+        print("Dang you can't vote yet but at least you're a teenager. :)")
+    else:
+        print("You're wayyyyy too young to vote.")
+elif age >= 18:
+    print("You're legal, go out there and vote!")
