@@ -1,0 +1,25 @@
+# Assignment
+
+#pt.1
+count = int(input("Give me a number:) "))
+numb = 0
+
+while count > 0:
+    print(count, end = " ")
+    count -=1
+print()
+print("Let's a GOOOO!!")
+
+#pt.2
+val = int(input("Type any number you'll like: "))
+
+for i in range (1, 11):
+    print (f"{i * val:2}", end=" ")
+    
+#pt.3
+num = int(input("tType a number: "))
+
+for i in range(1, num + 1):
+    factorial = 1
+    factorial *= i
+print(f"The factorial of {num} is {factorial}.")
