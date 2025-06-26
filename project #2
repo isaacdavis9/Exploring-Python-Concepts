@@ -1,0 +1,19 @@
+import random
+number_to_guess = random.randint(1, 100)
+lives = 0
+max_lives = 10
+
+
+while lives < max_lives:
+    guess = int(input("Guess a number between 1-100: "))
+    lives += 1
+
+    if guess < number_to_guess:
+        print("Ahh, this number is too small. Try again.")
+    elif guess > number_to_guess:
+        print("Dang it, this number is too large. Try again.")
+    else:
+        print("Nice, that's it!!")
+        break
+else:
+    print("Game Over. Better Luck Next Time.")
