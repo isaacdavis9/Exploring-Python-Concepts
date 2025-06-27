@@ -1,0 +1,28 @@
+# pt.1
+var = "Python is Amazing"
+
+first_word = var[:6]
+amazing_part = var[10:17]
+reversed_var = var[::-1]
+
+print("First word:", first_word)
+print("Amazing part:", amazing_part)
+print("Reversed string:", reversed_var)
+
+# pt.2
+phrase = "hello, python world!"
+
+print("Stripped:", phrase.strip())
+print("Capitalized:", phrase.strip().capitalize())
+print("Replaced:", phrase.strip().replace("world", "universe"))
+print("Uppercase:", phrase.strip().upper())
+
+# pt.3
+word = input("Enter a word: ")
+reversed_word = word[::-1]
+
+if word == reversed_word:
+    print(f"Yes, '{word}' is a palindrome!")
+else:
+    print(f"No, '{word}' is not a palindrome.")
+    print("Your reversed word is: " + reversed_word)
