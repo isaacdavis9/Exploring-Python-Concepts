@@ -1,0 +1,57 @@
+# project
+
+password = input("Enter your password: ")
+
+messages = []
+score = 0
+
+if len(password) >= 8:
+    score += 2
+else:
+    messages.append("❌ Password must be at least 8 characters long.")
+
+if any(char.isupper() for char in password):
+    score += 2
+else:
+    messages.append("❌ Include at least one uppercase letter (A-Z).")
+
+if any(char.islower() for char in password):
+    score += 1
+else:
+    messages.append("❌ Include at least one lowercase letter (a-z).")
+
+if any(char.isdigit() for char in password):
+    score += 2
+else:
+    messages.append("❌ Include at least one number (0-9).")
+
+special_chars = set("!@#$%^&*()-_=+[]{}|;:',.<>?/~`")
+if any(char in special_chars for char in password):
+    score += 2
+else:
+    messages.append("❌ Include at least one special character (e.g. @, #, $, !).")
+
+if " " in password:
+    messages.append("❌ Password should not contain spaces.")
+else:
+    score += 1
+
+print("\n🔎 Password Evaluation:")
+if not messages:
+    print("✅ Your password is strong! 💪")
+else:
+    for msg in messages:
+        print(msg)
+
+print(f"\n🧪 Password Strength Score: {score}/10")
+if score == 10:
+    print("Excellent! Your password could guard a treasure chest.")
+elif score >= 7:
+    print("Good job! Just a few tweaks to make it even stronger.")
+elif score >= 4:
+    print("It's okay, but it needs improvement.")
+else:
+    print("Weak password. Try making it longer and more complex.")
+
+
+print("\n🔁 Try different passwords to see how strong they are!")
