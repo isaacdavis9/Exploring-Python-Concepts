@@ -1,0 +1,47 @@
+# project #4
+
+inventory = {
+    "apple": (10, 2.5),
+    "banana": (20, 1.2)
+}
+
+def add_item(name, quantity, price):
+    inventory[name] = (quantity, price)
+    print(f"Added {name} with quantity {quantity} and price ${price:.2f}.")
+
+def remove_item(name):
+    if name in inventory:
+        del inventory[name]
+        print(f"Removed {name} from inventory.")
+    else:
+        print(f"Item '{name}' not found.")
+
+def update_item(name, quantity=None, price=None):
+    if name in inventory:
+        old_quantity, old_price = inventory[name]
+        new_quantity = quantity if quantity is not None else old_quantity
+        new_price = price if price is not None else old_price
+        inventory[name] = (new_quantity, new_price)
+        print(f"Updated {name} to quantity {new_quantity} and price ${new_price:.2f}.")
+    else:
+        print(f"Item '{name}' not found.")
+
+def display_inventory():
+    print("\nCurrent inventory:")
+    for item, (qty, price) in inventory.items():
+        print(f"Item: {item}, Quantity: {qty}, Price: ${price:.2f}")
+
+def calculate_total_value():
+    total = sum(qty * price for qty, price in inventory.values())
+    print(f"\nTotal value of inventory: ${total:.2f}")
+
+print("Welcome to the Inventory Manager!")
+
+display_inventory()
+
+print("\nAdding a new item: mango")
+add_item("mango", 15, 3.0)
+
+display_inventory()
+
+calculate_total_value()
